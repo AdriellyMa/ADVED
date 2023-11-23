@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="incio.css">
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="logo">
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/8983/8983107.png" alt="Ícone do Site">
+                <h1>ADVED</h1>
+            </div>
+         
+            <!--<img src="imagem1.jpg" alt="Imagem 1"-->
+            <!--<img src="imagem1.jpg" alt="Imagem 1"-->
+        </div>
+        <div class="right">
+             <a href="login.html">login</a>
+             <a href="cadastrar.html">cadastrar</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
