@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>LOGIN</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="login-form">
+            <div class="logo">
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/8983/8983107.png" alt="Ícone do Site">
+            <form id="login-form">
+                
+                <div class="Input-box">
+                    <input type="email" name="username" placeholder="email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="Input-box">
+                    <input type="password" name="password" placeholder="password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn">login</button>
+                </div>
+
+                <div class="social-login">
+                    <h2>Entrar com:</h2>
+                    <a href="https://accounts.google.com/InteractiveLogin/identifier?elo=1&ifkv=AVQVeyxxw6QK8Vznr2D9KJzmtJRAkLng2payub5xhicibchz2bw23C84Is9AZt7IVnDUBPvSgs3Svw&theme=glif&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                     class="social-button google">
+                        <i class='bx bxl-google'></i> Google
+                    </a>
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="social-button facebook">
+                        <i class='bx bxl-facebook'></i> Facebook
+                    </a>
+                    <a href="https://www.icloud.com/" class="social-button icloud">
+                        <i class='bx bxl-apple'></i> iCloud
+                    </a>
+                </div>
+                
+                <p id="login-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+       
+        const bancoDeDados = {
+            "usuario1": "senha1",
+            "usuario2": "senha2",
+            "usuario3": "senha3"
+        };
+
+        const form = document.getElementById("login-form");
+        const status = document.getElementById("login-status");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = form.elements.username.value;
+            const password = form.elements.password.value;
+
+            if (bancoDeDados[username] === password) {
+                status.textContent = "Login bem-sucedido! Bem-vindo, " + username;
+            } else {
+                status.textContent = "Login falhou. Nome de usuário ou senha incorretos.";
+            }
+        });
+    </script>
+</body>
+</html>
