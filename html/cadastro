@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>CADASTRO</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="cadastro-form">
+            <div class="logo">
+                <img class="icon" src="https://cdn-icons-png.flaticon.com/512/8983/8983107.png" alt="Ícone do Site">
+            <form id="cadastro-form">
+                
+                <div class="Input-box">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="Input-box">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="Input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn">CADASTRAR</button>
+                </div>
+                                
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const bancoDeDados = {};
+
+        const form = document.getElementById("cadastro-form");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = form.elements.username.value;
+            const email = form.elements.email.value;
+            const password = form.elements.password.value;
+
+            if (bancoDeDados[username]) {
+                alert("Este nome de usuário já está em uso. Tente outro.");
+            } else {
+
+                bancoDeDados[username] = { email, password };
+                alert("Registro bem-sucedido! Agora você pode fazer o login com o seu novo nome de usuário.");
+                form.reset();
+
+                window.location.href= "Principal.html";
+
+            }
+        })
+        
+        ;
+    </script>
+</body>
+</html>
+
